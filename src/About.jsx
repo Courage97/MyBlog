@@ -1,15 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Barnabas from './assets/barnabas.jpg';
+import {fadeIn} from './variants'
+
 
 const AboutMe = () => {
   return (
-    <section className="w-full h-screen bg-white dark:bg-gray-900 transition-colors duration-300 flex justify-center items-center mb-12 md:mb-0">
+    <motion.section 
+    variants = {fadeIn("down", 0.2)}
+          initial = "hidden"
+          whileInView={"show"}
+          viewport={{once:false, amount:0.7}}
+    className="w-full h-screen bg-white dark:bg-gray-900 transition-colors duration-300 flex justify-center items-center mb-12 md:mb-0">
       <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center p-6 md:p-8">
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+         variants = {fadeIn("left", 0.2)}
+         initial = "hidden"
+         whileInView={"show"}
+         viewport={{once:false, amount:0.7}}
           className="mb-12 lg:mb-0 lg:mr-8 mt-16 md:mt-0"
         >
           <motion.img
@@ -18,6 +26,10 @@ const AboutMe = () => {
             className="w-40 h-40 md:w-72 md:h-72 mt-16 rounded-full object-cover border-4 border-blue-500"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            variants = {fadeIn("right", 0.5)}
+            initial = "hidden"
+            whileInView={"show"}
+            viewport={{once:false, amount:0.7}}
           />
         </motion.div>
         <motion.div
@@ -64,7 +76,7 @@ const AboutMe = () => {
           </motion.a>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import {fadeIn} from './variants'
 
 const ServiceSection = () => {
   const services = [
@@ -70,9 +71,10 @@ const ServiceSection = () => {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+    variants = {fadeIn("left", 0.2)}
+    initial = "hidden"
+    whileInView={"show"}
+    viewport={{once:false, amount:0.7}}
       id="services"
       className="w-full h-full flex items-center justify-center bg-white dark:bg-gray-900 transition-colors duration-300 py-12"
     >
@@ -90,9 +92,10 @@ const ServiceSection = () => {
             <motion.div
               key={index}
               className="service-item border border-gray-200 dark:border-gray-600 rounded-lg flex flex-col items-center justify-center text-center cursor-pointer relative shadow-md p-6 bg-white dark:bg-gray-800"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.5 }}
+              variants = {fadeIn("right", 0.3)}
+              initial = "hidden"
+              whileInView={"show"}
+              viewport={{once:false, amount:0.7}}
               whileHover={{ scale: 1.05, boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.1)' }}
             >
               <div className="flex items-center justify-center mb-4 bg-white dark:bg-gray-800 rounded-full p-3">

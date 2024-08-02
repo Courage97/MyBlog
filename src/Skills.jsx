@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaDatabase, FaBootstrap, FaGithub, FaGitAlt } from 'react-icons/fa';
 import { SiMysql, SiDjango, SiTailwindcss, SiFirebase, SiNetlify, SiVercel } from 'react-icons/si';
+import {fadeIn} from './variants'
 
 const skills = [
   {
@@ -43,7 +44,12 @@ const skills = [
 
 const SkillSection = () => {
   return (
-    <section className="w-full h-full bg-white dark:bg-gray-900 transition-colors duration-300 py-12">
+    <motion.section
+    variants = {fadeIn("right", 0.5)}
+    initial = "hidden"
+    whileInView={"show"}
+    viewport={{once:false, amount:0.5}}
+    className="w-full h-full bg-white dark:bg-gray-900 transition-colors duration-300 py-12">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 font-serif">
@@ -53,7 +59,12 @@ const SkillSection = () => {
             Here are the technologies and tools I am proficient in:
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.div
+          variants = {fadeIn("up", 0.2)}
+          initial = "hidden"
+          whileInView={"show"}
+          viewport={{once:false, amount:0.7}}
+        className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skills.map((skillCategory, index) => (
             <motion.div
               key={skillCategory.category}
@@ -86,9 +97,9 @@ const SkillSection = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

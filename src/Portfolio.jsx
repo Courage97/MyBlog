@@ -7,6 +7,7 @@ import crud from './assets/crud.jpg';
 import gym from './assets/gym.jpg';
 import hotel from './assets/hotel.jpg';
 import quote from './assets/quote.jpg';
+import {fadeIn} from './variants'
 
 const projects = [
   {
@@ -49,7 +50,12 @@ const projects = [
 
 const ProjectSection = () => {
   return (
-    <section id="projects" className="py-16 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <motion.section 
+    variants = {fadeIn("down", 0.2)}
+    initial = "hidden"
+    whileInView={"show"}
+    viewport={{once:false, amount:0.7}}
+    id="projects" className="py-16 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 font-serif">
@@ -83,7 +89,7 @@ const ProjectSection = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
