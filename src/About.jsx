@@ -205,7 +205,7 @@ const AboutMe = () => {
               className="flex flex-col sm:flex-row gap-4 pt-6"
             >
               <a
-                href="https://drive.google.com/file/d/1h7p51AtgI5WaGZKDo4uzwp4yMLhuYWhR/view?usp=sharing"
+                href="https://drive.google.com/file/d/1lErNFQ_ciHc1k4p9DSiDEjxbcx--KrUA/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative px-8 py-4 group"
