@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './Navbar';
 import About from './About';
 import Service from './Service';
-import Social from './Social'; // Import SocialIcons component
 import Skills from './Skills'
 import Portfolio from './Portfolio'
 import Contact from './Contact'
@@ -46,12 +45,12 @@ function App() {
         transition={{ duration: 0.3 }}
         className={`min-h-screen ${darkMode ? 'dark' : ''}`}
       >
-        <Social /> {/* Add SocialIcons component */}
+        
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <About />
         <Service />
         <Skills />
-        <Portfolio />
+        <Portfolio /> 
         <Contact />
         <Footer />
         <main>
